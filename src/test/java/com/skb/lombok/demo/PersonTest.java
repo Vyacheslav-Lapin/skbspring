@@ -39,9 +39,11 @@ class PersonTest {
     void GetAge() {
         assertThat(person.getAge(), is(18));
     }
-//
-//    @Test
-//    @DisplayName("SetAge method works correctly")
-//    void SetAge() {
-//    }
+
+    @Test
+    @DisplayName("SetAge method works correctly")
+    void SetAge() {
+        person.setAge(19);
+        assertThat(person.getAge(), is(19));
+    }
 }
