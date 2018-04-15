@@ -1,5 +1,6 @@
 package com.skb.lombok.demo;
 
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import static java.time.Month.APRIL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PersonTest {
 
@@ -17,18 +19,25 @@ class PersonTest {
 
     @BeforeEach
     void setUp() {
-        person = new Person()
-                .setAge(18)
-                .setFirstName("Вася")
-                .setLastName("Пупкин")
-                .setDob(LocalDate.of(1985,
+        person = Person.builder()
+                .firstName("Вася")
+                .lastName("Пупктин")
+                .dob(LocalDate.of(1985,
                         APRIL,
-                        5));
+                        5))
+                .build();
+    }
 
-        int x, y, z;
+    @Test
+    @DisplayName("bulder works correctly")
+    void builder() {
 
-        //...
-        x = 56;
+        ;
+
+        assertTrue(Person.builder()
+                .contact("222-33-22")
+                .contact("kjhsdf@kjhsdg.com")
+                .build().getContacts().contains("222-33-22"));
     }
 
     @Test
@@ -62,5 +71,12 @@ class PersonTest {
 //        assertThat(person.age(), is(19));
         assertThat(person.getFirstName(), is("Вася"));
 //        assertThat(person.firstName(), is("Вася"));
+    }
+
+    @Test
+    @SneakyThrows
+    @DisplayName("Name method works correctly")
+    void Name() {
+        Class.forName("org.apache.logging.log4j.Logger");
     }
 }
