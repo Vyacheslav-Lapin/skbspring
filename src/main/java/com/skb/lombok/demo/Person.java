@@ -1,14 +1,23 @@
 package com.skb.lombok.demo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Value;
+import lombok.experimental.Accessors;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
-//@NoArgsConstructor
-//@Data//@Getter @Setter @EqualsAndHashCode @ToString
-@Value //@FieldDefaults(level = PRIVATE, makeFinal = true) @Getter @EqualsAndHashCode @ToString @RequiredArgsConstructor
+import static lombok.AccessLevel.PRIVATE;
 
+@Data//@Getter @Setter @EqualsAndHashCode @ToString
+@FieldDefaults(level = PRIVATE)
+@NoArgsConstructor
+@AllArgsConstructor
+//@Value //@FieldDefaults(level = PRIVATE, makeFinal = true) @Getter @EqualsAndHashCode @ToString @RequiredArgsConstructor
 public class Person {
+    //    @Wither
     int age;
     String firstName;
     String lastName;

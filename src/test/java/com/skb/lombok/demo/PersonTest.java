@@ -1,12 +1,10 @@
 package com.skb.lombok.demo;
 
-import org.hamcrest.core.Is;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.time.Month;
 
 import static java.time.Month.APRIL;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,13 +17,18 @@ class PersonTest {
 
     @BeforeEach
     void setUp() {
-        person = new Person(
-                18,
-                "Вася",
-                "Пупкин",
-                LocalDate.of(1985,
+        person = new Person()
+                .setAge(18)
+                .setFirstName("Вася")
+                .setLastName("Пупкин")
+                .setDob(LocalDate.of(1985,
                         APRIL,
                         5));
+
+        int x, y, z;
+
+        //...
+        x = 56;
     }
 
     @Test
@@ -45,12 +48,19 @@ class PersonTest {
     @DisplayName("GetAge method works correctly")
     void GetAge() {
         assertThat(person.getAge(), is(18));
+//        assertThat(person.age(), is(18));
     }
 
     @Test
     @DisplayName("SetAge method works correctly")
     void SetAge() {
-//        person.setAge(19);
-//        assertThat(person.getAge(), is(19));
+//        Person person = this.person.withAge(19);
+        person.setAge(19);
+//        person.age(19);
+
+        assertThat(person.getAge(), is(19));
+//        assertThat(person.age(), is(19));
+        assertThat(person.getFirstName(), is("Вася"));
+//        assertThat(person.firstName(), is("Вася"));
     }
 }
