@@ -1,22 +1,24 @@
 package com.skb.lombok.demo;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
+import lombok.Value;
 
-import java.util.Objects;
+import java.time.LocalDate;
 
-import static lombok.AccessLevel.NONE;
-import static lombok.AccessLevel.PRIVATE;
+//@NoArgsConstructor
+//@Data//@Getter @Setter @EqualsAndHashCode @ToString
+@Value //@FieldDefaults(level = PRIVATE, makeFinal = true) @Getter @EqualsAndHashCode @ToString @RequiredArgsConstructor
 
-@FieldDefaults(level = PRIVATE)
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
 public class Person {
     int age;
     String firstName;
     String lastName;
+    LocalDate dob;
+
+//    public static void main(String... arguments) {
+//        for (Method method : Person.class.getDeclaredMethods()) {
+//            for (Parameter parameter : method.getParameters()) {
+//                System.out.println(parameter.getName());
+//            }
+//        }
+//    }
 }
