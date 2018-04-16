@@ -34,6 +34,14 @@
             <version>1.16.20</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>edu.washington.cs.types.checker</groupId>
+            <artifactId>checker-framework</artifactId>
+            <version>LATEST</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        
         
         <!-- TEST (JUnit 5 & Mockito) -->
         <dependency>

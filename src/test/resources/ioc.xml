@@ -11,9 +11,9 @@
 
     <bean id="person" class="com.skb.spring.ioc.demo.SimplePerson"
           c:firstName="John"
-          c:country-ref="country">
+          c:country-ref="simpleCountry">
         <!--<constructor-arg name="firstName" value="John"/>-->
-        <!--<constructor-arg name="country" ref="country"/>-->
+        <!--<constructor-arg name="simpleCountry" ref="simpleCountry"/>-->
         <constructor-arg name="lastName" value="Smith"/>
         <constructor-arg name="age" value="35"/>
         <constructor-arg name="isProgrammer" value="true"/>
@@ -22,7 +22,7 @@
         <constructor-arg name="contacts" ref="contacts"/>
     </bean>
 
-    <bean id="country" class="com.skb.spring.ioc.demo.SimpleCountry">
+    <bean id="simpleCountry" class="com.skb.spring.ioc.demo.SimpleCountry">
         <constructor-arg name="name" value="Russia"/>
         <constructor-arg name="codeName" value="RU"/>
     </bean>

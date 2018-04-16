@@ -1,14 +1,9 @@
 package com.skb.lombok.demo;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.Wither;
-import lombok.extern.log4j.Log4j2;
+import lombok.Value;
 
 import java.time.LocalDate;
 import java.util.List;
-
-import static lombok.AccessLevel.PRIVATE;
 
 //@Data//@Getter @Setter @EqualsAndHashCode @ToString
 //@Log4j2
@@ -17,17 +12,17 @@ import static lombok.AccessLevel.PRIVATE;
 //@NoArgsConstructor
 @Value //@FieldDefaults(level = PRIVATE, makeFinal = true) @Getter @EqualsAndHashCode @ToString @RequiredArgsConstructor
 public class Person {
-        @Wither
+    //    @Wither
 //    @Builder.Default
     int age = 18;
     String firstName;
     String lastName;
     LocalDate dob;
 
-//    @Singular
+    //    @Singular
     List<String> contacts;
 
-    public void jhgsd(){
+    public void jhgsd() {
 //        try (EntityManager entityManager = null) {
 //            entityManager.merge(new Person());
 //        }

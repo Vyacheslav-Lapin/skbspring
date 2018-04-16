@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PersonTest {
 
-    Person person;
+//    Person person;
 
     @BeforeEach
     void setUp() {
