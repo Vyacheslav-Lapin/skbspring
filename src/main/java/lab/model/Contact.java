@@ -1,7 +1,6 @@
-package com.skb.spring.ioc.demo;
+package lab.model;
 
 public interface Contact {
     String getType();
-
     String getValue();
 }

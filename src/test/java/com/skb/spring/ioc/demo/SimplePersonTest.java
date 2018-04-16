@@ -1,5 +1,6 @@
 package com.skb.spring.ioc.demo;
 
+import lab.model.SimpleContact;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;

@@ -1,5 +1,7 @@
 package com.skb.spring.ioc.demo;
 
+import lab.model.Contact;
+
 public interface Person {
     String getFirstName();
 

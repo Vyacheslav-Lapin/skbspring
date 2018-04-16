@@ -1,11 +1,9 @@
 package com.skb.spring.ioc.demo;
 
+import lab.model.Contact;
 import lombok.Value;
-import lombok.experimental.FieldDefaults;
 
 import java.util.List;
-
-import static lombok.AccessLevel.PRIVATE;
 
 @Value
 public class SimplePerson implements Person {

@@ -3,7 +3,9 @@ package lab.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ListFactoryBean;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -13,6 +15,7 @@ import java.util.List;
 import static lombok.AccessLevel.PRIVATE;
 
 @Data
+@Component("person")
 @AllArgsConstructor
 @FieldDefaults(level = PRIVATE)
 public class UsualPerson implements Person {
@@ -26,5 +29,5 @@ public class UsualPerson implements Person {
     float height;
     boolean isProgrammer;
 
-    List<String> contacts;
+    List<Contact> contacts;
 }

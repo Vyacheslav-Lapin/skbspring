@@ -1,6 +1,7 @@
 package com.skb.spring.ioc;
 
 import lab.model.Person;
+import lab.model.SimpleContact;
 import lab.model.SimpleCountry;
 import lab.model.UsualPerson;
 import org.junit.jupiter.api.Test;
@@ -33,6 +34,8 @@ class HelloWorldTest {
                 35,
                 1.78f,
                 true,
-                Arrays.asList("asd@asd.ru", "+55 11 99999-5555"));
+                Arrays.asList(
+                        new SimpleContact("EMAIL", "asd@asd.ru"),
+                        new SimpleContact("TELEPHONE", "+55 11 99999-5555")));
     }
 }
