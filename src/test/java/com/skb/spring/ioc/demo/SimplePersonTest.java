@@ -12,7 +12,7 @@ import static org.hamcrest.core.Is.is;
 class SimplePersonTest {
 
     static final String APPLICATION_CONTEXT_XML_FILE_NAME =
-            "ioc.xml";
+            "ioc-demo.xml";
 
     BeanFactory context =
             new ClassPathXmlApplicationContext(

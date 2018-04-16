@@ -4,32 +4,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-">
+	    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="person" class="com.skb.spring.ioc.demo.SimplePerson"
-          c:firstName="John"
-          c:country-ref="simpleCountry">
-        <!--<constructor-arg name="firstName" value="John"/>-->
-        <!--<constructor-arg name="simpleCountry" ref="simpleCountry"/>-->
-        <constructor-arg name="lastName" value="Smith"/>
-        <constructor-arg name="age" value="35"/>
-        <constructor-arg name="isProgrammer" value="true"/>
-        <constructor-arg name="height" value="1.78"/>
-        <constructor-arg name="broke" value="false"/>
-        <constructor-arg name="contacts" ref="contacts"/>
-    </bean>
+    <bean id="person" class="lab.model.UsualPerson"
+          c:id="1"
+          c:name="John Smith"
+          c:isProgrammer="true"
+          c:height="1.78"
+          c:contacts-ref="contacts"
+          c:age="35"
+          c:country-ref="simpleCountry"/>
 
-    <bean id="simpleCountry" class="com.skb.spring.ioc.demo.SimpleCountry">
-        <constructor-arg name="name" value="Russia"/>
-        <constructor-arg name="codeName" value="RU"/>
-    </bean>
+    <bean id="simpleCountry" class="lab.model.SimpleCountry"
+          c:id="1" c:name="Russia" c:codeName="RU"/>
 
-    <util:list id="contacts" value-type="com.skb.spring.ioc.demo.Contact">
-        <bean class="com.skb.spring.ioc.demo.SimpleContact" c:type="EMAIL" c:value="asd@asd.ru"/>
-        <bean class="com.skb.spring.ioc.demo.SimpleContact" c:type="TELEPHONE" c:value="+55 11 99999-5555"/>
+    <util:list id="contacts" value-type="java.lang.String">
+        <bean class="java.lang.String" c:value="asd@asd.ru"/>
+        <bean class="java.lang.String" c:value="+55 11 99999-5555"/>
     </util:list>
-
 </beans>

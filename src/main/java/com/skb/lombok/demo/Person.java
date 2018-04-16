@@ -1,5 +1,6 @@
 package com.skb.lombok.demo;
 
+import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.util.List;
 //@FieldDefaults(level = PRIVATE)
 //@NoArgsConstructor
 @Value //@FieldDefaults(level = PRIVATE, makeFinal = true) @Getter @EqualsAndHashCode @ToString @RequiredArgsConstructor
+@EqualsAndHashCode(exclude = {"age", "dob"})
 public class Person {
     //    @Wither
 //    @Builder.Default

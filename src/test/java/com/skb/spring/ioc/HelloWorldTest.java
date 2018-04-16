@@ -1,13 +1,11 @@
+package com.skb.spring.ioc;
+
 import lab.model.Person;
 import lab.model.SimpleCountry;
 import lab.model.UsualPerson;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.util.Arrays;
 
@@ -16,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HelloWorldTest {
 
     static final String APPLICATION_CONTEXT_XML_FILE_NAME =
-            "application-context.xml";
+            "ioc.xml";
 
     private BeanFactory context = new ClassPathXmlApplicationContext(
             APPLICATION_CONTEXT_XML_FILE_NAME
@@ -24,12 +22,10 @@ class HelloWorldTest {
 
     @Test
     void testInitPerson() {
-        Person person = context.getBean("person", Person.class);
-        assertEquals(getExpectedPerson(), person);
-        System.out.println(person);
+        assertEquals(getExpectedPerson(), context.getBean("person"));
     }
 
-    private Person getExpectedPerson() {
+    public static Person getExpectedPerson() {
         return new UsualPerson(
                 1,
                 "John Smith",
