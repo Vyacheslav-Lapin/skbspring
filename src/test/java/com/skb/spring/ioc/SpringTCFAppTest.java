@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-//@ContextConfiguration("classpath:ioc.xml")
 @ContextConfiguration(classes = JavaConfig.class)
+//@ContextConfiguration("classpath:ioc.xml")
 @FieldDefaults(level = PRIVATE)
 class SpringTCFAppTest {
 

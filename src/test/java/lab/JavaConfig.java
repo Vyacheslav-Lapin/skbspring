@@ -14,11 +14,9 @@ import static lombok.AccessLevel.PRIVATE;
 @Configuration
 //@ComponentScan("lab.model")
 @AllArgsConstructor
-@ImportResource("ioc.xml")
+@ImportResource("aop.xml")
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 public class JavaConfig {
-
-    int id;
 
     @Bean
     public List<Contact> contacts() {
