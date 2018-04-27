@@ -40,11 +40,29 @@
             <version>LATEST</version>
         </dependency>
 
+        <!--VAVR-->
         <dependency>
             <groupId>io.vavr</groupId>
             <artifactId>vavr</artifactId>
             <version>0.9.2</version>
         </dependency>
+
+        <!-- Spring H2 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.h2database</groupId>
+        	<artifactId>h2</artifactId>
+        	<version>LATEST</version>
+        	<scope>test</scope>
+        </dependency>
+        <!--driver org.h2.Driver-->
+        <!--url jdbc:h2:mem:test;DB_CLOSE_DELAY=-1-->
+        <!--<dependency><groupId>com.zaxxer</groupId><artifactId>HikariCP</artifactId><version>LATEST</version></dependency>-->
+        <!--<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>-->
 
         <!--Spring ORM-->
         <dependency>

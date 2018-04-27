@@ -7,7 +7,7 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Aspect of {@link Politeness#sellSquishee}
+ * Aspect of {@link Politeness#polite()}
  */
 @Target(METHOD)
 @Retention(RUNTIME)

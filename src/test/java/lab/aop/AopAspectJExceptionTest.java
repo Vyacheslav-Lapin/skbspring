@@ -1,3 +1,5 @@
+package lab.aop;
+
 import lab.JavaConfig;
 import lab.common.TestUtils;
 import lab.model.Bar;

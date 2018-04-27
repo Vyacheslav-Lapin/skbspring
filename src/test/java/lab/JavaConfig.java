@@ -14,7 +14,7 @@ import static lombok.AccessLevel.PRIVATE;
 @Configuration
 //@ComponentScan("lab.model")
 @AllArgsConstructor
-@ImportResource("aop.xml")
+@ImportResource("jdbc.xml")
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 public class JavaConfig {
 

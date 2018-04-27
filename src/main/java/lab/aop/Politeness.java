@@ -1,6 +1,5 @@
 package lab.aop;
 
-
 import lab.model.Person;
 import lab.model.Squishee;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -12,16 +11,16 @@ import org.springframework.stereotype.Component;
 public class Politeness {
 
     @Pointcut("@annotation(Polite)")
-    private void sellSquishee() {
+    private void polite() {
     }
 
-    @Before("sellSquishee() && args(person)")
+    @Before("polite() && args(person)")
     public void sayHello(Person person) {
-        System.out.printf("Hello %s. How are you doing? %n",
+        System.out.printf("Hello %s. How are you doing?%n",
                 person.getName());
     }
 
-    @AfterReturning(pointcut = "sellSquishee()",
+    @AfterReturning(pointcut = "polite()",
                     returning = "result",
                     argNames = "result")
     public void askOpinion(Squishee result) {
@@ -29,21 +28,21 @@ public class Politeness {
                 result.getName());
     }
 
-    @AfterThrowing("sellSquishee()")
+    @AfterThrowing("polite()")
     public void sayYouAreNotAllowed() {
-        System.out.println("Hmmm... \n");
+        System.out.println("Hmmm...");
     }
 
-    @After("sellSquishee()")
+    @After("polite()")
     public void sayGoodBye() {
-        System.out.println("Good Bye! \n");
+        System.out.println("Good Bye!");
     }
 
-    @Around("sellSquishee()")
+    @Around("polite()")
     public Object sayPoliteWordsAndSell(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("Hi! \n");
+        System.out.println("Hi!");
         Object retVal = pjp.proceed();
-        System.out.println("See you! \n");
+        System.out.println("See you!");
         return retVal;
     }
 
