@@ -71,7 +71,7 @@ class PersonTest {
     }
 
     @Test
-    @SneakyThrows
+//    @SneakyThrows
     @DisplayName("Name method works correctly")
     void Name() {
 //        Class.forName("org.apache.logging.log4j.Logger");

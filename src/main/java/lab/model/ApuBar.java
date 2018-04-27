@@ -1,14 +1,17 @@
 package lab.model;
 
-import lab.aop.AopLog;
+import lab.aop.Polite;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApuBar implements Bar {
 
-	public Squishee sellSquishee(Customer customer)  {
-        if (customer.isBroke()){
+    @Polite
+	public Squishee sellSquishee(Person customer)  {
+        if (customer.isBroke())
             throw new CustomerBrokenException();
-        }
-        AopLog.append("Here is your Squishee \n");
+
+        System.out.println("Here is your Squishee");
         return new Squishee("Usual Squishee");
     }
 }

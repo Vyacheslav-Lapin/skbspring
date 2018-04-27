@@ -7,6 +7,8 @@ public interface Person {
 
     Person setName(String name);
 
+    boolean isBroke();
+
     default void sayHello(@NotNull Person person) {
         System.out.printf(
                 "Hello, %s, I`m %s",
@@ -14,4 +16,6 @@ public interface Person {
                 getName()
         );
     }
+
+    Person withBroke(boolean isBroke);
 }

@@ -1,14 +1,14 @@
 package lab.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
+import static lombok.AccessLevel.PRIVATE;
+
+@Getter
+@AllArgsConstructor
+@FieldDefaults(level = PRIVATE)
 public class Squishee {
-    private String name;
-
-    public Squishee(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
+    String name;
 }

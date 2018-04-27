@@ -3,6 +3,7 @@ package lab.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.Wither;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ListFactoryBean;
 import org.springframework.stereotype.Component;
@@ -28,6 +29,9 @@ public class UsualPerson implements Person {
     int age;
     float height;
     boolean isProgrammer;
+
+    @Wither
+    boolean isBroke;
 
     List<Contact> contacts;
 }
