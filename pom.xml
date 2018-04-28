@@ -41,11 +41,11 @@
         </dependency>
 
         <!-- Spring JDBC & H2 -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>LATEST</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-jdbc</artifactId>-->
+            <!--<version>LATEST</version>-->
+        <!--</dependency>-->
         <dependency>
         	<groupId>com.h2database</groupId>
         	<artifactId>h2</artifactId>
@@ -62,8 +62,8 @@
         </dependency>
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.0.Final</version>
+            <artifactId>hibernate-jpa-2.2-api</artifactId>
+            <version>LATEST</version>
         </dependency>
 
         <!-- COMMON LIBS (Log4J2 & Vavr) -->
