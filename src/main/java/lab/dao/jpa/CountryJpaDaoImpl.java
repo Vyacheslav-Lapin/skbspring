@@ -1,37 +1,35 @@
 package lab.dao.jpa;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-
-import lombok.val;
-import org.springframework.stereotype.Repository;
-
 import lab.dao.CountryDao;
 import lab.model.Country;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository("countryDao")
 public class CountryJpaDaoImpl extends AbstractJpaDao implements CountryDao {
 
-	@Override
-	public void save(Country country) {
-        //		TODO: Implement it
-		try (val em = new com.skb.lombok.demo.EntityManager(null)) {
-            //		TODO: Implement it
-        }
-	}
+    @Override
+    public void save(Country country) {
+        withEntityManagerInTransaction(em -> em.merge(country));
+    }
 
-	@Override
-	public List<Country> getAllCountries() {
-//	TODO: Implement it
-		return null	;
-	}// getAllcountries()
+    @Override
+    public List<Country> getAllCountries() {
+        return mapEntityManagerInTransaction(em ->
+                em.createQuery(
+                        "select c from SimpleCountry c", Country.class)
+                        .getResultList());
+    }
 
-	@Override
-	public Country getCountryByName(String name) {
-//		TODO: Implement it
-
-		return null;
-	}
+    @Override
+    public Country getCountryByName(String name) {
+        return mapEntityManagerInTransaction(em ->
+                em.createQuery(
+                        "select c from SimpleCountry c where c.name like :name",
+                        Country.class)
+                        .setParameter("name", name)
+                        .getSingleResult());
+    }
 
 }
